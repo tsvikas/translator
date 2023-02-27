@@ -40,6 +40,10 @@ def new_key_button_callback():
     st.session_state["secret_key"] = dict_to_str(KEYS[method])
 
 
+def clear_key_button_callback():
+    st.session_state["secret_key"] = ""
+
+
 # inputs
 st.set_page_config("Translator")
 st.title("Translator")
@@ -70,6 +74,7 @@ with col1:
     if space:
         key["_"] = " "
     st.button("New key", on_click=new_key_button_callback)
+    st.button("Clear key", on_click=clear_key_button_callback)
 with col2up:
     output_sep = "" if squeeze else " "
     plain_text = output_sep.join(
