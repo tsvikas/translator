@@ -32,6 +32,8 @@ KEYS = {
     "Key": {str(i): str(i) for i in range(1, 1 + 50)},
     "English 1-26": {str(i): c for i, c in enumerate(ENG_LETTERS, 1)},
     "Hebrew 1-22": {str(i): c for i, c in enumerate(HEB_LETTERS, 1)},
+    "English ASCII": {str(i): chr(i) for i in range(22, 127)},
+    "Hebrew ASCII": {str(i): chr(i - 128 + ord("א")) for i in range(128, 155)},
 }
 DEFAULT_KEY = "English 1-26"
 
